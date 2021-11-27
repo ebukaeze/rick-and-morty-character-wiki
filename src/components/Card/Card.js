@@ -20,31 +20,30 @@ const Card = ({result}) => {
                             <div className="">
                                 <div className="fs-6 fw-normal">Last Location</div>
                                 <div className="fs-5">{location.name}</div>
+                               
                             </div>
                         </div>
-                        { (()=> {
+                        
+                        </div>
+                        {/* <div className={`${styles.badge} position-absolute badge bg-success`}>{status}</div> */}
+                        {(()=> {
                             if (status === "Dead"){
                                 return(
-                                    <div className={`${styles.badge} position-absolute bg-danger`}>
-                                        {status}
-                                        </div>
+                                    <div className={`${styles.badge} position-absolute badge bg-danger`}>{status}</div>
                                 )
                             }
                             else if(status === "Alive"){
                                 return(
-                                 <div className={`${styles.badge} position-absolute bg-success`}>
-                                    {status}
-                                    </div>
+                                 <div className={`${styles.badge} position-absolute badge bg-success`}>{status}</div>
                                 )
                             } else{
                                 return(
-                                    <div className={`${styles.badge} position-absolute bg-secondary`}>
+                                    <div className={`${styles.badge} position-absolute badge bg-secondary`}>
                                         {status}
                                         </div>
                                 )
                             }
-                        })}
-                        </div>
+                        })()}
                   </div>
             )
         });
