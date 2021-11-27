@@ -1,8 +1,29 @@
 import React from 'react'
+import Gender from './Category/Gender'
+import Species from './Category/Species'
+import Status from './Category/Status'
 
-const Filter = () => {
+const Filter = ({ setStatus, setPageNumber, setGender }) => {
+
+    const clearFilters =() =>{
+        setStatus("");
+        setGender("");
+    }
     return (
-        <div>
+        <div className="col-3">
+         <div className="text-center fw-bold fs-4 mb-4 ">
+             Filters
+         </div>
+         <div style={{cursor: 'pointer'}} onClick={clearFilters} className="text-center text-decoration-underline text-primary">
+             Clear Filters
+         </div>
+         <div className="accordion mt-2" id="accordionExample">
+              <Status setStatus={setStatus} setPageNumber={setPageNumber}/>
+              <Species />
+              <Gender setGender={setGender} setPageNumber={setPageNumber}/>
+            
+
+         </div>
             
         </div>
     )
