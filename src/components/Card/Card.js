@@ -1,11 +1,11 @@
 import React from 'react';
 import styles from './Card.module.scss';
 
-const Card = ({result}) => {
+const Card = ({results}) => {
     let display;
 
-    if(result){
-        display = result.map((item) => {
+    if(results){
+        display = results.map((item) => {
             let { id, image, name, status, location, } = item;
 
             return (
