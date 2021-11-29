@@ -1,6 +1,17 @@
 @import "bootstrap/scss/bootstrap";
 @import "variables";
 
+body {
+  scroll-behavior: smooth;
+}
 .App {
   background-color: #ebebeb;
+  padding-top: 4rem;
+}
+
+.active {
+  border-bottom: 3px solid #0b53d7;
+  //padding-top: 8px;
+  color: #0b53d7 !important;
+  transition: 0.3s ease;
 }
