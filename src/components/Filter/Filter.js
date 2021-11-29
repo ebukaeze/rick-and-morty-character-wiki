@@ -3,11 +3,15 @@ import Gender from './Category/Gender'
 import Species from './Category/Species'
 import Status from './Category/Status'
 
-const Filter = ({ setStatus, setPageNumber, setGender }) => {
+const Filter = ({ setStatus, setPageNumber, setGender, setSpecies }) => {
 
     const clearFilters =() =>{
         setStatus("");
         setGender("");
+        setPageNumber("");
+        setSpecies("");
+
+       window.location.reload(false)
     }
     return (
         <div className="col-3">
@@ -19,7 +23,7 @@ const Filter = ({ setStatus, setPageNumber, setGender }) => {
          </div>
          <div className="accordion mt-2" id="accordionExample">
               <Status setStatus={setStatus} setPageNumber={setPageNumber}/>
-              <Species />
+              <Species setSpecies={setSpecies} setPageNumber={setPageNumber}/>
               <Gender setGender={setGender} setPageNumber={setPageNumber}/>
             
 
