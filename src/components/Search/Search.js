@@ -8,7 +8,7 @@ const Search = ({setSearch, setPageNumber}) => {
     }
     return (
         <form
-        className={`${styles.search} d-flex flex-row align-items-center justify-content-center gap-4 mb-5`}>
+        className={`${styles.search} d-flex flex-sm-row align-items-center justify-content-center gap-4 mb-5`}>
             <input type="text" 
                  placeholder="Search for Characters"
                  className={`${styles.input}`}
