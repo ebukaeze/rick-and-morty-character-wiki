@@ -28,7 +28,7 @@ const Characters = () => {
     <div className="container mt-5">
       
       <Search  setSearch={setSearch} setPageNumber={setPageNumber}/>
-      <div className="row">
+      <div className="row ">
         <Filter 
          setGender={setGender}
          status={status}
@@ -39,7 +39,7 @@ const Characters = () => {
 
         <div className="col-lg-8 col-12">
           <div className="row">
-            <Card  results={results}/>
+            <Card page="/" results={results}/>
           </div>
           <div className="">
             <Pagination info={info} pageNumber={pageNumber} setPageNumber={setPageNumber}/>
