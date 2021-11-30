@@ -1,34 +1,56 @@
-import React from 'react';
+import React,{useState, useEffect } from 'react';
 import ReactPaginate from 'react-paginate';
 
 const Pagination = ({info, pageNumber, setPageNumber}) => {
-    /* const next = ()=>{
-        
-        setPageNumber( (prevState) => prevState + 1 )
-        
-    };
-    const prev = () => {
-        if(pageNumber === 1 ) return;
-        setPageNumber( (prevState) => prevState - 1 )
-    }; */
+
+    const [width, setwidth ] = useState(window.innerWidth)
+   
+
+    const updateDimension = () => {
+        setwidth(window.innerWidth)
+    }
+     useEffect(() => {
+         window.addEventListener("resize", updateDimension);
+         return window.removeEventListener("resize", updateDimension)
+
+     },[])
     return (
-        
+               <>
+               <style jsx>
+                   {
+                       `
+                       @media (max-width: 765px){
+                           .next,
+                           .prev {
+                               display: none;
+                           }
+                           .pagination{
+                               font-size: 14px;
+                           }
+                       }
+                       `
+                   }
+               </style>
             <ReactPaginate 
             className="pagination justify-content-center gap-4 my-5 text-white"
             forcePage={pageNumber === 1? 0 : pageNumber - 1}
             nextLabel="Next"
             previousLabel="Prev"
-            nextClassName="btn btn-primary"
-            previousClassName="btn btn-primary"
+            nextClassName="btn btn-primary next"
+            previousClassName="btn btn-primary prev"
+            nextLinkClassName="text-white"
+            previousLinkClassName="text-white"
             pageClassName="page-item"
             pageLinkClassName="page-link"
+            marginPagesDisplayed={width < 576 ? 1 : 2}
+            pageRangeDisplayed={width < 576 ? 1 : 2}
             activeClassName="active"
             onPageChange={(data) => {
                 setPageNumber(data.selected + 1)
             }}
             pageCount={info?.pages}/>
             
-       
+       </>
     )
 }
 
