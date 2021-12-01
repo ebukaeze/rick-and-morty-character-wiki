@@ -4,7 +4,7 @@
 
 - Powered by
   > Rickandmortyapi.com
-  > Discover and connect to thousands of rick and morty contents API.
+  > Discover and connect to thousands of rick and morty content API.
 
 ## Live Site
 
